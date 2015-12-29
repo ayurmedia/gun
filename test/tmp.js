@@ -32,7 +32,7 @@
 			} if(cb){ 
 				(fn.stack = fn.stack || []).push(cb);
 			} return fn;
-		}, setImmediate = setImmediate || function(cb){return setTimeout(cb,0)}
+		}, setImmediate = setImmediate || function(cb){return setTimeout(cb,0)};
 		return fn;
 	}
 
@@ -58,7 +58,7 @@
 						console.log("before five");
 						n();
 					}, 5000);
-				})
+				});
 				next(function(n){
 					console.log(5);
 					setTimeout(n, 3000);

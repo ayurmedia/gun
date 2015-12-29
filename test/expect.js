@@ -60,7 +60,7 @@
         if (this.flags[$flags[i]]) continue;
 
         var name = $flags[i]
-          , assertion = new Assertion(this.obj, name, this)
+          , assertion = new Assertion(this.obj, name, this);
 
         if ('function' == typeof Assertion.prototype[name]) {
           // clone the function, make sure we dont touch the prot reference
@@ -485,7 +485,7 @@
    * @api public
    */
   Assertion.prototype.fail = function (msg) {
-    var error = function() { return msg || "explicit failure"; }
+    var error = function() { return msg || "explicit failure"; };
     this.assert(false, error, error);
     return this;
   };

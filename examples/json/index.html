@@ -35,13 +35,13 @@
 				}
 			});
 			
-			var $ = function(s, e){ return (e || document).querySelector(s) } // make native look like jQuery.
+			var $ = function(s, e){ return (e || document).querySelector(s) }; // make native look like jQuery.
 			document.onkeyup = function(e){
 				if(!e || !e.target){ return } // ignore if no element!
 				if(!e.target.attributes.contenteditable){ return } // ignore if element content isn't editable!
 				ref.path((e.target.previousElementSibling.innerHTML||'').toString().replace(/\</ig, '&lt;')) // grab the label, which is in the previous element.
 				   .put( (e.target.innerHTML||'').toString().replace(/\</ig, '&lt;') ); // insert the value of the text in the current element.
-			}
+			};
 			$('#form').onsubmit = function add(e){
 				return ref.path($('#field').value || '').put("value"), false; // add a new field, and cancel the form submit.
 			}

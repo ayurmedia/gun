@@ -544,7 +544,7 @@ describe('Gun', function(){
 					}},
 					a: 0
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf']).to.not.be.ok();
 			var ctx = Gun.union(gun, prime);
@@ -559,7 +559,7 @@ describe('Gun', function(){
 					}},
 					a: 0
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf']).to.not.be.ok();
 			var ctx = Gun.union(gun, prime, function(){
@@ -576,7 +576,7 @@ describe('Gun', function(){
 					}},
 					b: 'c'
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf'].a).to.be(0);
 			expect(gun.__.graph['asdf'].b).to.not.be.ok();
@@ -595,7 +595,7 @@ describe('Gun', function(){
 					}},
 					b: 'd'
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf'].b).to.be('c');
 			var ctx = Gun.union(gun, prime, function(){
@@ -612,7 +612,7 @@ describe('Gun', function(){
 					}},
 					x: 'hi'
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf'].x).to.not.be.ok();
 			var ctx = Gun.union(gun, prime, function(){
@@ -629,7 +629,7 @@ describe('Gun', function(){
 					}},
 					x: 'hello'
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf'].x).to.be('hi');
 			var ctx = Gun.union(gun, prime, function(){
@@ -646,7 +646,7 @@ describe('Gun', function(){
 					}},
 					x: 'how are you?'
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf'].x).to.be('hello');
 			var now = Gun.time.is();
@@ -665,7 +665,7 @@ describe('Gun', function(){
 					}},
 					y: 'goodbye'
 				}
-			}
+			};
 			expect(gun.__.graph['asdf'].y).to.not.be.ok();
 			var now = Gun.time.is();
 			var ctx = Gun.union(gun, prime, function(){
@@ -685,7 +685,7 @@ describe('Gun', function(){
 					y: 'bye',
 					z: 'who'
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf'].y).to.be('goodbye');
 			expect(gun.__.graph['asdf'].z).to.not.be.ok();
@@ -712,7 +712,7 @@ describe('Gun', function(){
 					y: 'farewell',
 					z: 'doctor who'
 				}
-			}
+			};
 
 			expect(gun.__.graph['asdf'].w).to.not.be.ok();
 			expect(gun.__.graph['asdf'].x).to.be('how are you?');
@@ -744,7 +744,7 @@ describe('Gun', function(){
 					}},
 					msg: "Let's chat!"
 				}
-			}
+			};
 
 			expect(gun.__.graph['sadf']).to.not.be.ok();
 			expect(gun.__.graph['fdsa']).to.not.be.ok();
@@ -770,7 +770,7 @@ describe('Gun', function(){
 					}},
 					msg: "hi"
 				}
-			}
+			};
 
 			expect(gun.__.graph['sadf']).to.be.ok();
 			expect(gun.__.graph['fdsa']).to.be.ok();
@@ -798,7 +798,7 @@ describe('Gun', function(){
 					x: 1,
 					y: 2
 				}
-			}
+			};
 			var node = Gun.union.pseudo('soul', graph);
 			expect(node).to.not.be.ok();
 		});
@@ -830,7 +830,7 @@ describe('Gun', function(){
 					c: 3,
 					z: 3
 				}
-			}
+			};
 			var node = Gun.union.pseudo('soul', graph);
 			expect(Gun.is.soul.on(node)).to.be('soul');
 			expect(node.a).to.be(1);
@@ -1291,18 +1291,18 @@ describe('Gun', function(){
 			var mark = {
 				age: 23,
 				name: "Mark Nadal"
-			}
+			};
 			var amber = {
 				age: 23,
 				name: "Amber Nadal",
 				phd: true
-			}
+			};
 			mark.wife = amber;
 			amber.husband = mark;
 			var cat = {
 				age: 3,
 				name: "Hobbes"
-			}
+			};
 			mark.pet = cat;
 			amber.pet = cat;
 			cat.owner = mark;
@@ -1438,7 +1438,7 @@ describe('Gun', function(){
 		});
 		
 		it('val path put val key', function(done){ // bug discovered from Jose's visualizer
-			var gun = Gun(), s = Gun.time.is(), n = function(){ return Gun.time.is() }
+			var gun = Gun(), s = Gun.time.is(), n = function(){ return Gun.time.is() };
 			this.timeout(5000);
 			
 			gun.put({gender:'m', age:30, name:'alfred'}).key('user/alfred');
@@ -1925,7 +1925,7 @@ describe('Gun', function(){
 						}
 					});
 				},t || 10);
-			};
+			}
 			put({on: 'bus', not: 'transparent'});
 			put({on: null, not: 'torrent'}, 200);
 			put({on: 'sub', not: 'parent'}, 250, true);
@@ -2003,7 +2003,7 @@ describe('Gun', function(){
 				expect(Gun.is.soul(p[1])).to.be.ok();
 				expect(Gun.is.soul(p[2])).to.be.ok();
 				expect(Gun.is.soul(p[3])).to.be.ok();
-			})
+			});
 			
 			var players = [], me;
 			gun.map(function (player, number) {
@@ -2126,7 +2126,7 @@ describe('Gun', function(){
 					cb(null, graph);
 					setTimeout(badNetwork, ctx.network);
 				},ctx.network);
-			}
+			};
 			ctx.get.fake = {};
 			for(var i = 1; i < (ctx.gen) + 1; i++){
 				ctx.get.fake['f'+i] = i;
@@ -2268,7 +2268,7 @@ describe('Gun', function(){
 			chat.set({who: 'mark', what: "3", when: 3});
 			chat.set({who: 'mark', what: "4", when: 4});
 			chat.set({who: 'mark', what: "5", when: 5});
-			var seen = {1: false, 2: false, 3: false, 4: false, 5: false}
+			var seen = {1: false, 2: false, 3: false, 4: false, 5: false};
 			setTimeout(function(){				
 				chat.map(function(m){ /*console.log("MAP:", m)*/ }).val(function(msg, field){
 					var msg = Gun.obj.copy(msg);

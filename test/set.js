@@ -26,7 +26,7 @@
 	list.set('d').val(function(val){
 		console.log('what', val, '\n\n');
 		console.log(gun.__.graph);
-	})
+	});
 	return;
 	gun.set({
 		name: "Mark Nadal",

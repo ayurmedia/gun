@@ -7,10 +7,13 @@
 
 		<script src="../../gun.js"></script>
 		<script>
+			var gun ;
 		// by Forrest Tait! Edited by Mark Nadal.
 		function ready(){
 			var $ = document.querySelector.bind(document);
 			var gun = Gun(location.origin + '/gun').get('example/todo/data');
+			window.gun = gun;
+
 			gun.on(function renderToDo(val){
 				var todoHTML = '';
 				for(field in val) {

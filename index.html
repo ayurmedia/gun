@@ -362,7 +362,7 @@ html, body {
 					} else {
 						to();	
 					}
-				}; 
+				}
 				mouse.delay(1200).animate({top: "70%", left: "20%"}, {
 					duration: 400, 
 					specialEasing: {top: 'easeOutQuad', left: 'easeInQuad'}, 
@@ -591,13 +591,13 @@ ref.on(function(data){
 				$("pre").each(function(){
 					hljs.highlightBlock(this);
 				})
-			}
+			};
 			$(".your-key").text(key);
 			hili();
 
 			location.hash = 'step1';
 			$(window).on('hashchange', function(){
-				$('.step').removeClass('show').addClass('hide')
+				$('.step').removeClass('show').addClass('hide');
 			  $(location.hash.replace('#','.')).addClass('show');
 			});
 

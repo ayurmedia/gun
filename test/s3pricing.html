@@ -52,7 +52,7 @@
 				,	se = $('#se')
 				,	o = $('#o')
 				,	r = $('#r')
-				,	n = function(n){ return parseFloat(n) }
+				,	n = function(n){ return parseFloat(n) };
 				$(document).on('keyup', function(){
 					r.val(
 						((( n(sim.val()) / n(se.val()) ) * n(o.val()) / 1000) * 0.005 ).toFixed(2)

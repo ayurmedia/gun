@@ -27,7 +27,7 @@ module.exports=require('theory')
 		name = name || id;
 		if(name){ $r.attr('name', name) }
 		return $r;
-	}
+	};
 	shoot.graph = function(g, url){
 		if(url){ $url.text(url) }
 		a.obj(g).each(function(n,id){
@@ -36,7 +36,7 @@ module.exports=require('theory')
 			shoot.field($('.sub', $n), n);
 		});
 		$('.node .sub .sub').slideUp();
-	}
+	};
 	shoot.field = function($n, n, p){
 		a.obj(n).each(function(val,key){
 			if(key === '_'){ return }
@@ -59,7 +59,7 @@ module.exports=require('theory')
 				}
 			}
 		});
-	}
+	};
 	shot.load('gunjs.herokuapp.com/tests/package.json',function(graph){
 		if(!graph){ return $url.text("Something went wrong :( please reload.") }
 		g = graph;
@@ -96,7 +96,7 @@ module.exports=require('theory')
 			g(p,v);
 		});
 		the.key('enter').up(function(e){
-			if(!g || the.key.tame()){ return }
+			if(!g || the.key.tame()){  }
 		},document);
 		the.key('erase').down(function(e){
 			if(the.key.tame()){ return }
@@ -119,7 +119,7 @@ module.exports=require('theory')
 			return $e.parents().addBack().map(function(){
 				return $(this).attr('name')
 			}).get().join('.');
-		}
+		};
 		shoot.nav = function(dir){
 			if(the.key.tame()){ return }
 			var f = '.field', c = 'on', g = $graph;
@@ -149,7 +149,7 @@ module.exports=require('theory')
 			}
 			on.removeClass(c);
 			n.addClass(c);
-		}
+		};
 		the.key('down').hold(function(e){
 			shoot.nav();
 		});

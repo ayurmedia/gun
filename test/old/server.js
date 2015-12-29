@@ -8,7 +8,7 @@ module.exports=require('theory')
 	echo.shot = a.shots();
 	echo.put = function(m){
 		console.log('stream', m);
-	}
+	};
 	echo.state = function(m){
 		if(echo.shot.server(m,a.com.reply)){ return }
 		m.what.body = 'module.exports = {boo: "yay"};';
